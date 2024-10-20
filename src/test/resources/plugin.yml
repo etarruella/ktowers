@@ -1,0 +1,31 @@
+name: KTowers
+version: 1.0
+main: com.etarruella.KTowers
+description: KTowers, a plugin that allow you to play TheTowers mini game
+authors: [Erik Tarruella, Víctor de Lomas, Pol Prat]
+website: https://discord.gg/2mUCm6V8rg
+api-version: '1.21'
+
+permissions:
+  ktowers.operator:
+    description: "Operator default to ops"
+    default: op
+    children:
+      ktowers.manager: false
+      ktowers.player: false
+  ktowers.manager:
+    description: "Manager, takes care of game state, players & teams"
+    default: false
+  ktowers.player:
+    description: "The default permission, a simple player"
+    default: true
+
+commands:
+  ktowers:
+    description: "Used for enter into the edit mode, also to save map and map configs"
+    usage: "/ktowers <edit | save> <map-name>"
+    permission: ktowers.operator
+    permission-message: "You do not have permission to use this command"
+  editor:
+    description: "Used for adding map metadata config e.g. locations, generators, baskets, etc"
+    usage: "/editor <set-lobby | set-team-lobby | set-team-spawn | set-team-arena-spawn | set-generator | set-team-basket | set-map-center>"
