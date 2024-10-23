@@ -41,6 +41,9 @@ map-metadata:
     team-a:
     team-b:
 
+  # KGenerator
+  generators:
+
   # Location
   map-center:
 
