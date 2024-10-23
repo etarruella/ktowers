@@ -1,0 +1,12 @@
+# List of maps that will be loaded by the server. By default, the ktowers map.
+# Note: You can add your own maps to the maps plugin folder with the config file in `maps/cfg` folder.
+active-maps:
+  - ktowers
+
+# Timeout (in seconds) to stop the server when the game is over
+restart-timeout: 60
+
+# MongoDB connection URI.
+mongodb:
+  enabled: false
+  uri: '' # e.g. 'mongodb://username:password@localhost:27017/mydatabase'

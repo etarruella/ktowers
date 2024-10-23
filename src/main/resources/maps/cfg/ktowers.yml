@@ -1,0 +1,58 @@
+# Game duration
+game-duration: 90
+
+# If activated, players on the same team can hurt each other
+friendly-fire: false
+
+# XP points awarded per kill (not levels)
+xp-per-kill: 10
+
+# Timeout (in seconds) before the player can spawn again
+spawn-timeout: 0
+
+# Ends the game when a team reaches this score (-1 to disable)
+max-points: 10
+
+# Max build config options
+max-build:
+  enabled: false
+  height: 200
+
+# Deathmatch type when game duration ends (in case of tie)
+deathmatch-type: ARENA
+
+map-metadata:
+  # Location
+  lobby:
+    general:
+    team-a:
+    team-b:
+
+  # Location
+  spawn:
+    team-a:
+    team-b:
+
+  # PotionEffect list
+  spawn-effects:
+
+  # Locations
+  arena-spawn:
+    team-a:
+    team-b:
+
+  # Location
+  map-center:
+
+  # Simple
+  team-a:
+    # String
+    name: Argentina
+    # String
+    tag: ARG
+    # ChatColor
+    color: BLUE
+  team-b:
+    name: Spain
+    tag: ESP
+    color: RED
