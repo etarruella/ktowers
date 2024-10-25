@@ -18,6 +18,7 @@ public class ConfigManager {
 
     private Map<String, File> maps;
     private Map<String, FileConfiguration> mapsCfg;
+    private FileConfiguration currentMapConfig;
     private Plugin plugin;
 
     public ConfigManager(Plugin plugin) {
@@ -35,6 +36,14 @@ public class ConfigManager {
 
     public FileConfiguration getMapConfig(String name) {
         return mapsCfg.get(name);
+    }
+
+    public void setCurrentMapConfig(String name) {
+        currentMapConfig = mapsCfg.get(name);
+    }
+
+    public FileConfiguration getCurrentMapConfig() {
+        return currentMapConfig;
     }
 
     public File getMap(String name) {
