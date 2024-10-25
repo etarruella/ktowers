@@ -43,6 +43,14 @@ public class KTeam implements ConfigurationSerializable {
         return name;
     }
 
+    public String getTag() {
+        return tag;
+    }
+
+    public void setTag(String tag) {
+        this.tag = tag;
+    }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -64,7 +72,9 @@ public class KTeam implements ConfigurationSerializable {
         Map<String, Object> map = new HashMap<>();
 
         map.put("name", name);
+        map.put("tag", tag);
         map.put("color", color);
+
         return map;
     }
 
