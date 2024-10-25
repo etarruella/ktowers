@@ -1,6 +1,6 @@
 package com.etarruella.config.options;
 
-import com.etarruella.entities.KGenerator;
+import com.etarruella.core.entities.KGenerator;
 import org.bukkit.configuration.file.FileConfiguration;
 
 public class OptionManager {
