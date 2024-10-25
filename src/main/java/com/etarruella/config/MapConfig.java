@@ -1,5 +1,7 @@
 package com.etarruella.config;
 
+import com.etarruella.config.options.OptionManager;
+
 public enum MapConfig {
     GAME_DURATION("game-duration", Integer.class),
     FRIENDLY_FIRE("friendly-fire", Boolean.class),
@@ -17,6 +19,14 @@ public enum MapConfig {
     MapConfig(String key, Class<?> type) {
         this.key = key;
         this.type = type;
+    }
+
+    public Object getValue() {
+        return OptionManager.getValue(key, type, ConfigManager.getConfigManager().getCurrentMapConfig());
+    }
+
+    public void setValue() {
+        OptionManager.setValue(key, type, ConfigManager.getConfigManager().getCurrentMapConfig());
     }
 
     public Class<?> getType() {
