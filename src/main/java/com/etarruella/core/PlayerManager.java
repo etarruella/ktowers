@@ -11,10 +11,6 @@ public class PlayerManager {
 
     private static final Map<UUID, KPlayer> players = new HashMap<>();
 
-    private PlayerManager() {
-        throw new UnsupportedOperationException("This is a utility class and cannot be instantiated");
-    }
-
     public static KPlayer getKPlayer(Player player) {
         UUID playerId = player.getUniqueId();
         return players.computeIfAbsent(playerId, id -> new KPlayer(player));
