@@ -1,4 +1,4 @@
-package com.etarruella.entities;
+package com.etarruella.core.entities;
 
 import org.bukkit.Location;
 import org.bukkit.configuration.serialization.ConfigurationSerializable;
