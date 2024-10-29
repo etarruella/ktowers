@@ -24,28 +24,63 @@ deathmatch-type: ARENA
 map-metadata:
   # Location
   lobby:
-    general:
     team-a:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: -20.5
+      y: 64.0
+      z: 992.5
+      pitch: 0.0
+      yaw: 90.0
     team-b:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 21.5
+      y: 64.0
+      z: 992.5
+      pitch: 0.0
+      yaw: -90.0
+    general:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 0.5
+      y: 88.0
+      z: 1024.5
+      pitch: 0.0
+      yaw: 180.0
 
   # Location
   spawn:
     team-a:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: -83.5
+      y: 192
+      z: 1152.5
+      pitch: 0.0
+      yaw: -90.0
     team-b:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 84.5
+      y: 192
+      z: 1152.5
+      pitch: 0.0
+      yaw: 90
 
   # PotionEffect list
-  spawn-effects:
+  spawn-effects: {}
 
   # Locations
   arena-spawn:
-    team-a:
-    team-b:
+    team-a: {}
+    team-b: {}
 
   # KGenerator list
-  generators:
+  generators: {}
 
   # Location
-  map-center:
+  map-center: {}
 
   # Simple
   team-a:
