@@ -22,8 +22,8 @@ public enum MainConfig {
         return type;
     }
 
-    public Object getValue() {
-        return OptionManager.getValue(key, type, ConfigManager.getConfigManager().getMainConfig());
+    public <T> T getValue() {
+        return (T) OptionManager.getValue(key, type, ConfigManager.getConfigManager().getMainConfig());
     }
 
     // TODO: Support value writing on MainConfig

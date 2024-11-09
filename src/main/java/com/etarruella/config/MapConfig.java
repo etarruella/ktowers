@@ -1,6 +1,8 @@
 package com.etarruella.config;
 
 import com.etarruella.config.options.OptionManager;
+import com.etarruella.core.entities.KMap;
+import com.etarruella.utils.FileManager;
 
 public enum MapConfig {
     GAME_DURATION("game-duration", Integer.class),
@@ -21,12 +23,15 @@ public enum MapConfig {
         this.type = type;
     }
 
-    public Object getValue() {
-        return OptionManager.getValue(key, type, ConfigManager.getConfigManager().getCurrentMapConfig());
+    public <T> T getValue() {
+        return (T) OptionManager.getValue(key, type, ConfigManager.getConfigManager().getActualMap().getConfig());
     }
 
-    public void setValue() {
-        OptionManager.setValue(key, type, ConfigManager.getConfigManager().getCurrentMapConfig());
+    public void setValue(Object object) {
+        KMap actualMap = ConfigManager.getConfigManager().getActualMap();
+
+        OptionManager.setValue(key, type, actualMap.getConfig(), object);
+        FileManager.saveModifiedMapCfg(actualMap.getName(), actualMap.getConfig());
     }
 
     public Class<?> getType() {

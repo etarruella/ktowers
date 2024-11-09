@@ -1,5 +1,8 @@
 package com.etarruella.config;
 
+import com.etarruella.config.options.OptionManager;
+import com.etarruella.core.entities.KMap;
+import com.etarruella.utils.FileManager;
 import org.bukkit.Location;
 
 import java.util.List;
@@ -27,6 +30,17 @@ public enum MapMetadata {
 
     public Class<?> getType() {
         return type;
+    }
+
+    public <T> T getValue() {
+        return (T) OptionManager.getValue(key, type, ConfigManager.getConfigManager().getActualMap().getConfig());
+    }
+
+    public void setValue(Object object) {
+        KMap actualMap = ConfigManager.getConfigManager().getActualMap();
+
+        OptionManager.setValue(key, type, actualMap.getConfig(), object);
+        FileManager.saveModifiedMapCfg(actualMap.getName(), actualMap.getConfig());
     }
 
     @Override
