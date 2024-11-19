@@ -23,7 +23,7 @@ public enum MapConfig {
         this.type = type;
     }
 
-    public <T> T getValue() {
+    /* public <T> T getValue() {
         return (T) OptionManager.getValue(key, type, ConfigManager.getConfigManager().getActualMap().getConfig());
     }
 
@@ -32,7 +32,7 @@ public enum MapConfig {
 
         OptionManager.setValue(key, type, actualMap.getConfig(), object);
         FileManager.saveModifiedMapCfg(actualMap.getName(), actualMap.getConfig());
-    }
+    } */
 
     public Class<?> getType() {
         return type;

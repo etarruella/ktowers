@@ -44,7 +44,7 @@ public class ConfigManager {
     }
 
     public void loadMap(String name) {
-        FileManager.prepareMap(maps.get(name));
+        //FileManager.prepareMap(maps.get(name));
         Bukkit.getWorlds().add(new WorldCreator(name).createWorld());
     }
 

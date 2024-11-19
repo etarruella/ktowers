@@ -31,8 +31,8 @@ public class KTowers extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent e) {
-        Location generalLobby = MapMetadata.LOBBY_TEAM_B.getValue();
-        e.getPlayer().teleport(generalLobby);
+        // Location generalLobby = MapMetadata.LOBBY_TEAM_B.getValue();
+        // e.getPlayer().teleport(generalLobby);
     }
 
 }

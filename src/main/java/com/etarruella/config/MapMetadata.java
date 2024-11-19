@@ -32,7 +32,7 @@ public enum MapMetadata {
         return type;
     }
 
-    public <T> T getValue() {
+    /* public <T> T getValue() {
         return (T) OptionManager.getValue(key, type, ConfigManager.getConfigManager().getActualMap().getConfig());
     }
 
@@ -42,6 +42,7 @@ public enum MapMetadata {
         OptionManager.setValue(key, type, actualMap.getConfig(), object);
         FileManager.saveModifiedMapCfg(actualMap.getName(), actualMap.getConfig());
     }
+    */
 
     @Override
     public String toString() {
