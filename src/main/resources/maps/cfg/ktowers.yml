@@ -1,0 +1,96 @@
+# Game duration
+game-duration: 90
+
+# If activated, players on the same team can hurt each other
+friendly-fire: false
+
+# XP points awarded per kill (not levels)
+xp-per-kill: 10
+
+# Timeout (in seconds) before the player can spawn again
+spawn-timeout: 0
+
+# Ends the game when a team reaches this score (-1 to disable)
+max-points: 10
+
+# Max build config options
+max-build:
+  enabled: false
+  height: 200
+
+# Deathmatch type when game duration ends (in case of tie)
+deathmatch-type: ARENA
+
+map-metadata:
+  # Location
+  lobby:
+    team-a:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: -20.5
+      y: 64.0
+      z: 992.5
+      pitch: 0.0
+      yaw: 90.0
+    team-b:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 21.5
+      y: 64.0
+      z: 992.5
+      pitch: 0.0
+      yaw: -90.0
+    general:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 0.5
+      y: 88.0
+      z: 1024.5
+      pitch: 0.0
+      yaw: 180.0
+
+  # Location
+  spawn:
+    team-a:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: -83.5
+      y: 192
+      z: 1152.5
+      pitch: 0.0
+      yaw: -90.0
+    team-b:
+      ==: org.bukkit.Location
+      world: ktowers
+      x: 84.5
+      y: 192
+      z: 1152.5
+      pitch: 0.0
+      yaw: 90
+
+  # PotionEffect list
+  spawn-effects: {}
+
+  # Locations
+  arena-spawn:
+    team-a: {}
+    team-b: {}
+
+  # KGenerator list
+  generators: {}
+
+  # Location
+  map-center: {}
+
+  # Simple
+  team-a:
+    # String
+    name: Argentina
+    # String
+    tag: ARG
+    # ChatColor
+    color: BLUE
+  team-b:
+    name: Spain
+    tag: ESP
+    color: RED

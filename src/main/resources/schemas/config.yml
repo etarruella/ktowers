@@ -1,0 +1,31 @@
+type: object
+properties:
+  active-maps:
+    type: array
+    description: |
+      List of schematics that will be loaded by the server.
+      By default, the KTowers map is active.
+      Note: You can add your own schematics to the schematics plugin folder with the config file in `schematics-cfg`.
+    items:
+      type: string
+    default:
+      - KTowers
+
+  mongodb:
+    type: object
+    properties:
+      enabled:
+        type: boolean
+        description: "Whether MongoDB database connection is enabled or not"
+        default: false
+      uri:
+        type: string
+        description: |
+          MongoDB connection URI.
+          Example: 'mongodb://username:password@localhost:27017/mydatabase'
+        default: ''
+
+  restart-timeout:
+    type: integer
+    description: "Timeout (in seconds) to stop the server when the game is over"
+    default: 60
