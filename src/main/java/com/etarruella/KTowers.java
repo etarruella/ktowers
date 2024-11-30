@@ -21,7 +21,7 @@ public class KTowers extends JavaPlugin implements Listener {
     }
 
     @Override
-    public void onEnable() {
+    public void onEnable() { // Main entry point
         plugin = this;
 
         ConfigManager cm = new ConfigManager(plugin);

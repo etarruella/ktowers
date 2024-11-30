@@ -2,6 +2,7 @@ package com.etarruella.utils;
 
 import com.etarruella.KTowers;
 import com.etarruella.config.MainConfig;
+import com.etarruella.core.entities.KMap;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.Plugin;
@@ -104,14 +105,9 @@ public class FileManager {
      * Prepares a map by decompressing the zip file into the server's world folder.
      * @param file The zip file to be decompressed.
      */
-    public static void prepareMap(File file) throws IOException {
+    public static KMap loadMap(File file) throws IOException {
         String worldName = FilenameUtils.removeExtension(file.getName());
         File worldFolder = new File(KTowers.getPlugin().getServer().getWorldContainer(), worldName);
-
-        // Create the world folder if it doesn't exist
-        if (!worldFolder.exists()) {
-            worldFolder.mkdirs();
-        }
 
         ZipInputStream zis = new ZipInputStream(new FileInputStream(file));
         ZipEntry zipEntry;
@@ -132,6 +128,8 @@ public class FileManager {
             }
             zis.closeEntry();
         }
+
+        return null;
     }
 
     public static void saveModifiedMapCfg(FileConfiguration fileConfiguration) {
