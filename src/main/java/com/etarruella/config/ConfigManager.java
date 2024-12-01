@@ -72,10 +72,9 @@ public class ConfigManager {
     private void mapLoader() {
         List<String> activeMaps = MainConfig.ACTIVE_MAPS.getValue();
 
-        maps = FileManager.getMaps();
-        setCurrentMap(activeMaps.getFirst());
-
-        mapsCfg = FileManager.getMapConfigs();
+        for (String mapName : activeMaps) {
+            FileManager.loadMap(mapName);
+        }
     }
 
 }
