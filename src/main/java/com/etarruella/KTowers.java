@@ -1,18 +1,18 @@
 package com.etarruella;
 
 import com.etarruella.config.ConfigManager;
-import com.etarruella.config.MapConfig;
-import com.etarruella.config.MapMetadata;
-import com.etarruella.config.options.OptionManager;
+import com.etarruella.core.GameManager;
+import com.etarruella.listeners.OnPlayerJoinListener;
+import com.etarruella.listeners.OnPlayerLeaveListener;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class KTowers extends JavaPlugin implements Listener {
+import java.util.ArrayList;
+import java.util.List;
+
+public class KTowers extends JavaPlugin {
 
     private static Plugin plugin;
 
@@ -24,15 +24,21 @@ public class KTowers extends JavaPlugin implements Listener {
     public void onEnable() { // Main entry point
         plugin = this;
 
-        ConfigManager cm = new ConfigManager(plugin);
+        ConfigManager configManager = new ConfigManager(plugin);
 
-        plugin.getServer().getPluginManager().registerEvents(this, this);
+        GameManager gameManager = new GameManager(this, configManager);
+
+        registerListeners();
     }
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent e) {
-        // Location generalLobby = MapMetadata.LOBBY_TEAM_B.getValue();
-        // e.getPlayer().teleport(generalLobby);
+    private void registerListeners() {
+        List<Listener> listeners = new ArrayList<>();
+        listeners.add(new OnPlayerJoinListener());
+        listeners.add(new OnPlayerLeaveListener());
+
+        for(Listener listener : listeners){
+            Bukkit.getServer().getPluginManager().registerEvents(listener, this);
+        }
     }
 
 }
