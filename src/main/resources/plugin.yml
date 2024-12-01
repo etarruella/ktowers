@@ -27,4 +27,4 @@ commands:
     permission-message: "You do not have permission to use this command"
   editor:
     description: "Used for adding map metadata config e.g. locations, generators, baskets, etc"
-    usage: "/editor <set-lobby | set-team-lobby | set-team-spawn | set-team-arena-spawn | set-generator | set-team-basket | set-map-center>"
+    usage: "/editor <set-lobby | set-team-lobby | set-team-spawn | set-team-arena | set-generator | set-team-basket | set-map-center>"
