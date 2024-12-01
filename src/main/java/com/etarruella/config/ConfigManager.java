@@ -5,6 +5,7 @@ import com.etarruella.utils.FileManager;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 
+import java.util.ArrayList;
 import java.util.List;
 
 // TODO: Add connection to FileManager (unzip & files management)
@@ -15,6 +16,8 @@ public class ConfigManager {
     private List<KMap> maps;
 
     public ConfigManager(Plugin plugin) {
+        maps = new ArrayList<>();
+
         configManager = this;
         this.plugin = plugin;
 
