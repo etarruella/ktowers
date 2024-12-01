@@ -29,8 +29,8 @@ public class FileManager {
 
         // Saves the main config & the default map and its config
         plugin.saveDefaultConfig();
-        plugin.saveResource(MAPS_CFG_DIR + "/" + "ktowers.yml", false);
-        plugin.saveResource(MAPS_DIR + "/" + "ktowers.zip", false);
+        plugin.saveResource(MAPS_CFG_DIR + "/" + DEFAULT_MAP_NAME + ".yml", false);
+        plugin.saveResource(MAPS_DIR + "/" + DEFAULT_MAP_NAME + ".zip", false);
     }
 
     private static void deleteMapFolder(String mapName) throws KMapException {
