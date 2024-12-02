@@ -1,10 +1,12 @@
 package com.etarruella;
 
+import com.etarruella.commands.EditorCommandExecutor;
 import com.etarruella.config.ConfigManager;
 import com.etarruella.core.GameManager;
 import com.etarruella.listeners.OnPlayerJoinListener;
 import com.etarruella.listeners.OnPlayerLeaveListener;
 import org.bukkit.Bukkit;
+import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -29,6 +31,9 @@ public class KTowers extends JavaPlugin {
         GameManager gameManager = new GameManager(this, configManager);
 
         registerListeners();
+
+        getCommand("editor").setExecutor(new EditorCommandExecutor());
+        getCommand("editor").setTabCompleter(new EditorCommandExecutor());
     }
 
     private void registerListeners() {

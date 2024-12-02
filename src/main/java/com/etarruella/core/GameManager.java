@@ -29,8 +29,12 @@ public class GameManager {
         // Nothing
     }
 
-    public void stopGame() {
+    public void startDeathmatch() {
+        // Nothing
+    }
 
+    public void stopGame() {
+        // Nothing
     }
 
     public GameState getGameState() {
