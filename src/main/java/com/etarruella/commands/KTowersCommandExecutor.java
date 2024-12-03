@@ -7,7 +7,7 @@ import org.bukkit.command.TabCompleter;
 
 import java.util.List;
 
-public class KTowersCommandExecutor implements CommandExecutor, TabCompleter {
+public class KTowersCommandExecutor implements KTowersCommand {
 
     enum SubCommands {
         EDIT("edit"),

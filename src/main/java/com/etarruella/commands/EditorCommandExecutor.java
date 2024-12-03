@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class EditorCommandExecutor implements CommandExecutor, TabCompleter {
+public class EditorCommandExecutor implements KTowersCommand {
 
     enum SubCommands {
         SET_LOBBY("set-lobby"),
