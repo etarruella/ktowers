@@ -42,10 +42,10 @@ public class EditorCommandExecutor implements KTowersCommand {
                 return Arrays.stream(SubCommands.values())
                             .map(SubCommands::toString)
                             .collect(Collectors.toList());
-            case 2:
-                if (args[1].contains("team")) {
-                    List.of("True", "true");
-                }
+//            case 2:
+//                if (args[1].contains("team")) {
+//                    List.of("True", "true");
+//                }
         }
         return List.of();
     }
